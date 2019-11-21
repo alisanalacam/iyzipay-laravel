@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Str;
 
 namespace Iyzico\IyzipayLaravel\StorableClasses;
 
@@ -28,7 +29,7 @@ abstract class StorableClass
     private function setAttributes(array $attributes = []): StorableClass
     {
         foreach ($attributes as $attr => $value) {
-            $attr        = camel_case($attr);
+            $attr        = Str::camel($attr);
             $this->$attr = $value;
         }
 
